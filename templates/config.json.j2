@@ -290,5 +290,11 @@
     {% endif %}
 
     {## UI ##}
-    "ui": {{ consul_ui | bool | to_json }}
+    "ui_config": {
+        "enabled": true,
+        "metrics_provider": "prometheus",
+        "metrics_proxy": {
+            base_url: "http://prometheus-server"
+        }
+    }
 }
